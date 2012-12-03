@@ -1,2 +1,7 @@
-<h1>Welcome to Rails Installer OS X</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<h1>Talk Local</h1>
+
+<% if current_user %>
+	Welcome <strong> <%= current_user.name %>! </strong> <br />
+	<br />
+	<%= link_to "View Users", users_path %> <br />
+<% end %>

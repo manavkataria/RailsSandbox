@@ -8,6 +8,16 @@
 </head>
 <body>
 
+	<div id="user_nav" align="right">
+	  <% if current_user %>
+	  	<%= image_tag(current_user.image) %>
+		<strong><%= current_user.name %></strong> signed in! 
+	    <%= link_to "Sign out", signout_path, id: "sign_out" %>
+	  <% else %>
+	    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+	  <% end %>
+	</div>
+
 <%= yield %>
 
 </body>

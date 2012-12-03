@@ -11,3 +11,13 @@
  *= require_self
  *= require_tree .
  */
+
+.gender-male {
+	font-weight: bold;
+	color: #153E7E; /* Dodger Blue4 */ ;
+}
+.gender-female {
+	font-weight: bold;
+	color: #C12283; /* Maroon3 */
+}
+
