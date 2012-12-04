@@ -5,7 +5,7 @@
 
 Rails.application.config.middleware.use OmniAuth::Builder do
   OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
-  provider :facebook, FACEBOOK_CONFIG['APP_ID'], FACEBOOK_CONFIG['APP_SECRET'], scope: FACEBOOK_CONFIG["APP_PERMISSIONS"]
+  provider :facebook, ENV['APP_ID'], ENV['APP_SECRET'], scope: FACEBOOK_CONFIG["APP_PERMISSIONS"]
   #provider :facebook, 468709936505848, '739b6b648966f731c8d7f68c275ff7fd'	
   #provider :facebook, 468709936505848, '739b6b648966f731c8d7f68c275ff7fd',  {:client_options => {:ssl => {:ca_file => "/opt/local/share/curl/curl-ca-bundle.crt"}}}
 end
