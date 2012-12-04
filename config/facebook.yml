@@ -1,8 +1,14 @@
 development:
+  APP_ID: 468709936505848
+  APP_SECRET: '739b6b648966f731c8d7f68c275ff7fd'
   APP_PERMISSIONS: 'email,user_birthday,user_location,user_likes'
 
 test:
+  APP_ID: 468709936505848
+  APP_SECRET: '739b6b648966f731c8d7f68c275ff7fd'
   APP_PERMISSIONS: 'email,user_birthday,user_location,user_likes'
 
 production:
+  APP_ID: 468709936505848
+  APP_SECRET: '739b6b648966f731c8d7f68c275ff7fd'
   APP_PERMISSIONS: 'email,user_birthday,user_location,user_likes'
