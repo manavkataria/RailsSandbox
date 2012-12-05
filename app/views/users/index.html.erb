@@ -18,7 +18,7 @@
     <td><%= link_to image_tag(user.image), user %></td>
     <td class='gender-<%=user.gender%>'> <%= user.name %> </td>
     <td><%= user.location %></td>
-    <td><%# time_ago_in_words user.birthday %></td>
+    <td><%= time_ago_in_words Date.strptime(user.birthday, "%m/%d/%Y") %></td>
     <td><%= link_to 'Email', 'mailto:' + user.email %></td>
     <td><%= user.bio %></td>
     <td><%= user.likes %></td>
