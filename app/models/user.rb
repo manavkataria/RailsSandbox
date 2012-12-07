@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :gender, :image, :location, :name, :oauth_expires_at, :oauth_token, :provider, :uid
+  attr_accessible :email, :gender, :image, :location, :name, :oauth_expires_at, :oauth_token, :provider, :uid, :ProfilePicFullURL
 	
 	def self.from_omniauth(auth)
 	  where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
@@ -27,6 +27,10 @@ class User < ActiveRecord::Base
 		user.bio = me["bio"]
 		user.likes = me["likes"]
 		user.birthday = me["birthday"]
+	    user.save!
+
+	    data = u.facebook.get_picture("me", width: "320", height: "480")
+	    user.ProfilePicFullURL = data["picture"]["data"]["url"];
 	    user.save!
 
 	  end
