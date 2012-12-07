@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
 		user.birthday = me["birthday"]
 	    user.save!
 
-	    data = u.facebook.get_picture("me", width: "320", height: "480")
+	    data = User.where(uid: user.uid)[0].facebook.get_picture("me", width: "320", height: "480")
 	    user.ProfilePicFullURL = data["picture"]["data"]["url"];
 	    user.save!
 
