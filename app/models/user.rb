@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :gender, :image, :location, :name, :oauth_expires_at, :oauth_token, :provider, :uid, :ProfilePicFullURL
+  attr_accessible :email, :gender, :image, :bio, :likes, :birthday, :location, :name, :oauth_expires_at, :oauth_token, :provider, :uid, :ProfilePicFullURL, :latitude, :longitude
 	
 	def self.from_omniauth(auth)
 	  where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
