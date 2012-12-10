@@ -36,8 +36,10 @@
 
 <p>
   <b>Location:</b>
-  <% if @user.latitude and @user.longitude %>  
+  <% if @user.location and @user.latitude and @user.longitude %>  
   <%= link_to @user.location, "http://maps.google.com/maps?q=#{@user.latitude},#{@user.longitude}", target: "_blank"  %>
+  <% elsif @user.latitude and @user.longitude %>  
+  <%= link_to "Map Coordinates", "http://maps.google.com/maps?q=#{@user.latitude},#{@user.longitude}", target: "_blank"  %>
   <% else %>
   <%= @user.location %>
   <% end %>
